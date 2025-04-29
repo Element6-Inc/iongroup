@@ -1,0 +1,252 @@
+/* =========================================
+   IMPORTS - MUST COME FIRST
+   ========================================= */
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+   @import "tailwindcss";
+   
+   /* Layer definitions */
+   @layer theme, base, components, utilities;
+   
+   /* =========================================
+      VARIABLES & CUSTOM PROPERTIES
+      ========================================= */
+   :root {
+     /* Font variables */
+     --font-family-base: 'Poppins', sans-serif;
+     --font-weight-regular: 400;
+     --font-weight-medium: 500;
+     --font-weight-semibold: 600;
+     --font-weight-bold: 700;
+     --font-weight-extrabold: 800;
+   
+     /* Spacing variables */
+     --spacing-xs: 0.5rem;
+     --spacing-sm: 1rem;
+     --spacing-md: 1.5rem;
+     --spacing-lg: 2rem;
+     --spacing-xl: 3rem;
+   
+     /* Transition variables */
+     --transition-default: all 300ms ease;
+   
+     /* Color variables */
+     --color-primary: rgb(34 211 238); /* Tailwind cyan-400 */
+   }
+   
+   /* =========================================
+      BASE STYLES
+      ========================================= */
+   html,
+   body {
+     font-family: var(--font-family-base);
+     font-weight: var(--font-weight-regular);
+     @apply bg-slate-50;
+   }
+   
+   /* Apply Poppins to headings */
+   h1, h2, h3, h4, h5, h6 {
+     font-family: var(--font-family-base);
+     @apply tracking-tight text-balance;
+   }
+   
+   /* =========================================
+      TYPOGRAPHY
+      ========================================= */
+   /* Headings */
+   h1 {
+     @apply text-5xl text-slate-50 sm:text-6xl/snug;
+     font-weight: var(--font-weight-bold);
+   }
+   
+   h2 {
+     @apply text-4xl text-sky-500 sm:text-5xl/tight;
+     font-weight: var(--font-weight-semibold);
+   }
+   
+   h3 {
+     @apply text-3xl sm:text-4xl/normal;
+     font-weight: var(--font-weight-semibold);
+   }
+   
+   h4 {
+     @apply text-2xl sm:text-3xl/relaxed text-slate-50;
+     font-weight: var(--font-weight-semibold);
+   }
+   
+   h5 {
+     @apply text-2xl text-slate-100 leading-relaxed;
+     font-weight: var(--font-weight-semibold);
+   }
+   
+   h6 {
+     @apply text-lg sm:text-xl;
+     font-weight: var(--font-weight-semibold);
+   }
+   
+   /* Body text */
+   p {
+     @apply my-4 text-slate-500 text-base/8 text-pretty;
+     font-weight: var(--font-weight-regular);
+   }
+   
+   /* Subheading styles */
+   .subheading {
+     @apply mt-8 text-lg text-slate-50 sm:text-xl text-balance;
+     font-weight: var(--font-weight-regular);
+   }
+   .copywright {
+      @apply mt-12 text-center text-sm text-slate-200;
+      font-weight: var(--font-weight-regular);
+   }
+   .copywright a {
+    @apply underline;
+ }
+   /* =========================================
+      COMPONENTS
+      ========================================= */
+   /* Button styles - base styles */
+   .btn {
+     @apply rounded py-4 px-7 text-base transform transition-all duration-300;
+     font-weight: var(--font-weight-medium);
+   }
+   
+   .btn:hover {
+     @apply scale-105;
+   }
+   
+   /* Button variants */
+   .btn {
+     @apply bg-red-500 text-slate-50 hover:bg-red-600;
+   }
+   
+   .btn-secondary {
+     @apply bg-sky-500 text-slate-50 hover:bg-sky-600;
+   }
+   
+   .btn-white {
+     @apply bg-slate-50 text-slate-500 hover:bg-slate-100;
+   }
+   
+   /* =========================================
+      CARD SLIDER COMPONENT
+      ========================================= */
+   /* Card container and wrapper */
+   .card-container {
+     position: relative;
+     overflow: hidden;
+     padding: 1px 0; /* Ensure all borders are visible */
+   }
+   
+   .card-wrapper {
+     padding: 1px; /* Add slight padding to ensure borders are visible */
+   }
+   
+   /* Square card styling */
+   .square-card {
+     @apply bg-slate-50/50 rounded-2xl border-2 border-solid border-slate-300;
+     aspect-ratio: 1/1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 2rem;
+     text-align: center;
+     height: auto;
+   }
+   
+   /* Icon container */
+   .icon-container {
+     @apply flex items-center justify-center mb-6;
+     width: 4.5rem;
+     height: 4.5rem;
+   }
+   
+   .card-title {
+     @apply mb-2 text-sky-500;
+   }
+   
+   .card-description {
+     @apply text-slate-500 text-base/8;
+     max-width: 100%;
+     overflow: hidden;
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+   }
+   
+   /* =========================================
+      SWIPER CUSTOMIZATION
+      ========================================= */
+   /* Custom pagination dots */
+   .custom-pagination {
+     display: flex;
+     gap: 0.5rem;
+     align-items: center;
+     justify-content: left;
+   }
+   
+   .pagination-dot {
+     width: 0.75rem;
+     height: 0.75rem;
+     border-radius: 50%;
+     background-color: #e2e8f0; /* slate-100 */
+     border: none;
+     cursor: pointer;
+     transition: all 0.3s ease;
+   }
+   
+   .pagination-dot.active {
+     background-color: rgb(14 165 233); /* sky-500 */
+     transform: scale(1.2);
+   }
+   
+   /* Swiper container and slides */
+   .swiper-container {
+     @apply overflow-hidden relative;
+     scroll-behavior: smooth;
+     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+   }
+   
+   .swiper-slide {
+     @apply rounded-xl overflow-hidden;
+     height: auto !important;
+     transition: opacity 0.4s ease, transform 0.4s ease;
+   }
+   
+   .swiper-wrapper {
+     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important;
+     transition-duration: 600ms !important;
+   }
+   
+   /* =========================================
+      SECTIONS
+      ========================================= */
+   /* Card slider section */
+   .card-slider-section {
+     @apply bg-slate-800 py-20;
+   }
+   
+   .card-slider-heading {
+     @apply text-5xl font-light text-white italic;
+   }
+   
+   .card-slider-subheading {
+     @apply text-6xl font-bold text-white mb-10;
+   }
+   
+   /* Social Icons */
+   .social-icon svg {
+     @apply h-8 w-8;
+   }
+   
+   .social-icon:hover svg {
+     @apply transform scale-110 transition-all duration-300;
+   }
+   
+   /* CTA Section */
+   .cta {
+     @apply relative;
+   }
+   
+   .cta-container {
+     @apply relative isolate overflow-hidden bg-gray-900 px-6 py-20 text-center shadow-2xl sm:rounded-3xl sm:px-16 bg-top bg-cover bg-no-repeat bg-fixed;
+   }

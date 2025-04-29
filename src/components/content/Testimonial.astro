@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import Rating from "../../assets/svg/rating.svg";
+
+interface Props {
+  title?: string;
+  content?: string;
+  author?: string;
+}
+
+const { title, content, author } = Astro.props;
+---
+
+<section class="relative w-full h-[600px] overflow-hidden">
+  {/* Content */}
+  <div class="relative h-full container xl:max-w-[1280px] mx-auto px-4">
+    <div class="flex flex-col items-center justify-center h-full text-center">
+      <div class="mb-5">
+        {/* Image */}
+        <Image
+          src={Rating}
+          alt="Red Star Rating"
+          class="h-4 w-auto"
+          width={200}
+          height={48}
+        />
+      </div>
+      {/* Title with Line Break for Mobile */}
+      <h3 class="mb-2 text-sky-500">
+        <span class="text-light">{title}</span>
+      </h3>
+      <div class="w-44 bg-sky-500 h-1 my-6 hidden lg:block mx-auto rounded">
+      </div>
+      <div>
+        <blockquote>
+          <p class="lg:px-56 mb-6">
+            {content}
+          </p>
+          <cite class="text-light h6 not-italic font-semibold text-sky-500">
+            {author}
+          </cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>

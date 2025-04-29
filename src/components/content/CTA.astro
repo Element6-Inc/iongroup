@@ -1,0 +1,33 @@
+---
+export interface Props {
+  media: string;
+  heading: string;
+  button: string;
+  link: string;
+  alt: string;
+}
+const { media, heading, button, link, alt } = Astro.props as Props;
+---
+
+<div class="cta">
+    <div class="mx-auto max-w-7xl py-10 sm:px-6 lg:px-8">
+      <div
+        class="cta-container relative"
+        style={`background-image: url(${media})`}
+        aria-label={alt}
+      >
+        {/* Color overlay div */}
+        <div class="absolute inset-0 bg-[#2f3640] bg-opacity-60 mix-blend-multiply"></div>
+        
+        {/* Content container with relative positioning to appear above the overlay */}
+        <div class="relative mx-auto text-center text-white z-10">
+          <h4 class="my-2">
+            {heading}
+          </h4>
+          <div class="mt-10">
+            <a class="inline-block btn btn-white" href={link}>{button}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

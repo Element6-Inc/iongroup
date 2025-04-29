@@ -1,0 +1,11 @@
+---
+interface Props {
+  href: string;
+  icon: string;
+}
+
+const { href, icon } = Astro.props;
+---
+<a href={href} class="social-icon">
+  <Fragment set:html={icon} />
+</a>

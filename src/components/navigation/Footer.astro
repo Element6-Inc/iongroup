@@ -1,0 +1,31 @@
+---
+// Footer.astro
+import { Image } from 'astro:assets';
+import Logo from '../../assets/logos/leaf.png';
+import Links from "./Links.astro";
+import footerWave from '../../assets/svg/city-skyline.svg';
+---
+
+<footer class="bg-stone-950">
+  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-16 sm:py-20 lg:px-8">
+        <!-- Centered Logo -->
+        <div class="flex justify-center mb-8">
+          <Image src={Logo} alt="ION Group logo" class="h-16 w-auto" />
+        </div>
+    <nav class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6" aria-label="Footer">
+      <Links />
+    </nav>
+    <p class="copywright">
+      &copy; <span id="copyright-year"></span> ION Group  |  164 Buttermill Ave. # 1 Vaughan, ON L4K 3X6 | <a href="tel:4169913767">416-991-3767</a>
+    </p>
+  </div>
+    <!-- Footer Image - Full width -->
+    <div class="w-full">
+      <Image src={footerWave} alt="Footer decoration" class="w-full" />
+    </div>
+</footer>
+
+<!-- custom JavaScript -->
+<script src="../../scripts/autoyear.js"></script>
+
+

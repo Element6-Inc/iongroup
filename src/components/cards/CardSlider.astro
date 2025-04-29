@@ -1,0 +1,88 @@
+---
+// CardSlider.astro
+import Card from './Card.astro';
+
+// Import icon assets
+import codeIcon from "../../assets/icons/cleaning.png";
+import creativeIcon from "../../assets/icons/cleaning.png";
+import paletteIcon from "../../assets/icons/cleaning.png";
+import databaseIcon from "../../assets/icons/cleaning.png";
+import terminalIcon from "../../assets/icons/cleaning.png";
+import cloudIcon from "../../assets/icons/cleaning.png";
+
+// Define card data with imported icons
+const cards = [
+  {
+    icon: codeIcon,
+    name: "Promotional Products",
+    description: "Custom promotional products & that strengthen your brand identity & create lasting impressions."
+  },
+  {
+    icon: creativeIcon,
+    name: "Lotw Fox",
+    description: "Passionate about development and design, I carry out projects at the request of users."
+  },
+  {
+    icon: paletteIcon,
+    name: "Sara Mit",
+    description: "Passionate about development and design, I carry out projects at the request of users."
+  },
+  {
+    icon: databaseIcon,
+    name: "Jenny Wert",
+    description: "Passionate about development and design, I carry out projects at the request of users."
+  },
+  {
+    icon: terminalIcon,
+    name: "Lexa Kin",
+    description: "Passionate about development and design, I carry out projects at the request of users."
+  },
+  {
+    icon: cloudIcon,
+    name: "Mark Johnson",
+    description: "Passionate about development and design, I carry out projects at the request of users."
+  }
+];
+---
+
+<!-- Include Swiper's CSS from CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css" crossorigin="anonymous" />
+
+<section class="max-w-7xl mx-auto bg-white p-8 sm:p-20 sm:rounded-3xl drop-shadow-xl">
+  <div class="container mx-auto">
+    <!-- Title aligned with first card -->
+    <div class="mb-12 text-center sm:text-left max-w-3xl">
+      <h3 class="text-[#2f3640]">Comprehensive solutions tailored to your needs.</h3>
+    </div>
+    
+    <!-- Slider Container -->
+    <div class="relative">
+      <!-- Card Container with same width as title container -->
+      <div class="card-container overflow-hidden">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            {cards.map(card => (
+              <Card 
+                icon={card.icon}
+                name={card.name}
+                description={card.description}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Custom pagination with 2 dots -->
+      <div class="custom-pagination flex mt-8 px-5 md:px-3">
+        <button class="pagination-dot active" data-index="0"></button>
+        <button class="pagination-dot" data-index="1"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Include Swiper's JS from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js" crossorigin="anonymous"></script>
+
+<!-- Custom JavaScript for 2-dot pagination -->
+<script src="../../scripts/swiper.js"></script>

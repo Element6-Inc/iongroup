@@ -1,0 +1,32 @@
+---
+// Card.astro - Standalone card component
+import { Image } from 'astro:assets';
+
+interface Props {
+  icon: ImageMetadata; // Now expecting an imported image
+  name: string;
+  description: string;
+  link?: string;
+}
+
+const { 
+  icon, 
+  name, 
+  description,
+  link = "#"
+} = Astro.props;
+---
+
+<article class="swiper-slide card-wrapper">
+  <div class="square-card">
+    <div class="icon-container">
+      <Image src={icon} alt={`${name} icon`} width={50} height={50} />
+    </div>
+    
+    <h5 class="card-title">{name}</h5>
+    
+    <p class="card-description">
+      {description}
+    </p>
+  </div>
+</article>

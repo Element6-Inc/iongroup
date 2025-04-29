@@ -1,0 +1,79 @@
+---
+// LogoSlider.astro - Enhanced with drop shadow and responsive design
+import { Image } from 'astro:assets';
+import logo1 from "../../assets/brands/hydro.svg";
+import logo2 from "../../assets/brands/scotiabank.svg";
+import logo3 from "../../assets/brands/panam.svg";
+import logo4 from "../../assets/brands/bgis.svg";
+import logo5 from "../../assets/brands/yorku.svg";
+import logo6 from "../../assets/brands/lifelabs.svg";
+import logo7 from "../../assets/brands/goodlife.svg";
+
+// Create logo data
+const logoData = [
+    { logo: logo1, alt: "HydroOne" },
+    { logo: logo2, alt: "Scotiabank" },
+    { logo: logo3, alt: "Toronto Panam" },
+    { logo: logo4, alt: "BGIS" },
+    { logo: logo5, alt: "York University" },
+    { logo: logo6, alt: "LifeLabs" },
+    { logo: logo7, alt: "Goodlife Fitness" },
+];
+---
+
+<!-- Container with drop shadow and responsive width -->
+<div class="w-full px-4 sm:px-6 py-8">
+  <div class="max-w-6xl mx-auto bg-white py-12 sm:py-14 px-4 sm:px-6 rounded-3xl drop-shadow-xl overflow-hidden">
+    <!-- Logo slider with responsive adjustments -->
+    <div
+      class="w-full inline-flex flex-nowrap overflow-hidden 
+      [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]
+      sm:[mask-image:_linear-gradient(to_right,transparent_0,_black_64px,_black_calc(100%-64px),transparent_100%)]"
+    >
+      <ul
+        id="logoList"
+        class="flex items-center justify-center md:justify-start 
+        [&_li]:mx-4 sm:[&_li]:mx-6 md:[&_li]:mx-8 
+        [&_img]:max-w-none animate-infinite-scroll"
+      >
+        {logoData.map(item => (
+          <li>
+            <Image 
+              src={item.logo} 
+              alt={item.alt} 
+              width={160} 
+              height={40} 
+              class="h-5 sm:h-6 md:h-7 w-auto hover:opacity-100 transition-opacity" 
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="../../scripts/slider.js"></script>
+
+<style>
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 25s linear infinite;
+  }
+  
+  /* No pause on hover */
+  
+  /* Adjust animation speed for smaller screens */
+  @media (max-width: 768px) {
+    .animate-infinite-scroll {
+      animation-duration: 20s;
+    }
+  }
+</style>

@@ -1,0 +1,86 @@
+---
+import SocialIcon from "../socials/SocialIcon.astro";
+
+interface Props {
+  title: string;
+  description1: string;
+  description2: string;
+  buttonText: string;
+  buttonLink: string;
+  imageSrc: string;
+  imageAlt: string;
+  imagePosition: "left" | "right";
+  socialIcons: {
+    href: string;
+    icon: string;
+  }[];
+}
+
+const {
+  title,
+  description1,
+  description2,
+  buttonText,
+  buttonLink,
+  imageSrc,
+  imageAlt,
+  imagePosition,
+  socialIcons,
+} = Astro.props;
+
+const isLeft = imagePosition === "left";
+const imageOrder = isLeft ? "order-1 md:order-1" : "order-1 md:order-2";
+const contentOrder = isLeft ? "order-2 md:order-2" : "order-2 md:order-1";
+---
+
+<div class="overflow-hidden py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+    <div
+      class="grid grid-cols-1 gap-x-16 gap-y-10 sm:gap-y-24 lg:grid-cols-2 lg:items-center"
+    >
+      <!-- Image Section -->
+      <div class={`${imageOrder} sm:px-6 lg:px-0`}>
+        <div class="aspect-square overflow-hidden rounded-xl hover:scale-105 transition-transform duration-300">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="h-full w-full object-cover object-center"
+          />
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <div class={`${contentOrder} px-6 lg:px-0 lg:pt-4`}>
+        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+          <h3 class="text-[#2f3640]">{title}</h3>
+          <p
+            class="mt-2"
+          >
+            {description1}
+          </p>
+          <p class="my-6">{description2}</p>
+
+          <!-- Button -->
+          <div>
+            <a
+              href={buttonLink}
+              target="_blank"
+              class="inline-block btn btn-secondary"
+            >
+              {buttonText}
+            </a>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="mt-6 flex gap-4 items-center">
+            {
+              socialIcons.map((icon) => (
+                <SocialIcon href={icon.href} icon={icon.icon} />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
