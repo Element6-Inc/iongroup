@@ -64,143 +64,145 @@ const linkedinIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24
 </svg>`;
 ---
 
-<Layout>
-	<!-- ----------------------------------------
+<Layout
+	title="IONGroup"
+	description="ION Group unites innovative companies committed to excellence, offering streamlined access to top-tier business services focused on quality and client success."
+/>
+<!-- ----------------------------------------
 	     HERO SECTION
 	     ---------------------------------------- -->
-	<Hero
-		title="Moving Industries Forward."
-		description="Connecting leaders in facility services, printing, digital design, & promotional marketing."
-		ctaText="Get started"
-		ctaHref="/start"
-		imageSrc="src/assets/features/hero.jpg"
-		imageAlt="Description of your image"
+<Hero
+	title="Moving Industries Forward."
+	description="Connecting leaders in facility services, printing, digital design, & promotional marketing."
+	ctaText="Get started"
+	ctaHref="/start"
+	imageSrc="src/assets/features/hero.jpg"
+	imageAlt="Description of your image"
+/>
+
+<!-- ----------------------------------------
+	     LOGO SLIDER SECTION
+	     ---------------------------------------- -->
+<section class="relative -mt-16 sm:-mt-20 md:-mt-24 z-10 px-4 sm:px-6">
+	<div class="container mx-auto">
+		<Slider />
+	</div>
+</section>
+
+<!-- ----------------------------------------
+	     INTRO SECTION
+	     ---------------------------------------- -->
+<Intro />
+
+<!-- ----------------------------------------
+	     CARD SLIDER SECTION
+	     ---------------------------------------- -->
+<CardSlider />
+
+<!-- ----------------------------------------
+	     FEATURE SECTION 1 - WHITE BACKGROUND
+	     ---------------------------------------- -->
+<section class="py-6 sm:pt-32 bg-white sm:-mt-72 md:-mt-24 px-4 sm:px-6">
+	<!-- Feature 1: Image on left -->
+	<Feature
+		title="Feature One Title"
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+		description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+		buttonText="Explore ionfs.ca"
+		buttonLink="https://ionfs.ca"
+		imageSrc="src/assets/features/feature-1.jpg"
+		imageAlt="Feature 1"
+		imagePosition="left"
+		socialIcons={[
+			{ href: "#", icon: facebookIcon },
+			{ href: "#", icon: instagramIcon },
+			{ href: "#", icon: linkedinIcon },
+		]}
+	/>
+</section>
+
+<!-- ----------------------------------------
+	     FEATURE SECTION 2 - DEFAULT BACKGROUND
+	     ---------------------------------------- -->
+<section>
+	<!-- Feature 2: Image on right -->
+	<Feature
+		title="Feature One Title"
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+		description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+		buttonText="Explore ionfs.ca"
+		buttonLink="https://ionfs.ca"
+		imageSrc="src/assets/features/feature-1.jpg"
+		imageAlt="Feature 1"
+		imagePosition="right"
+		socialIcons={[
+			{ href: "#", icon: facebookIcon },
+			{ href: "#", icon: instagramIcon },
+			{ href: "#", icon: linkedinIcon },
+		]}
 	/>
 
 	<!-- ----------------------------------------
-	     LOGO SLIDER SECTION
-	     ---------------------------------------- -->
-	<section class="relative -mt-16 sm:-mt-20 md:-mt-24 z-10 px-4 sm:px-6">
-		<div class="container mx-auto">
-			<Slider />
-		</div>
-	</section>
-
-	<!-- ----------------------------------------
-	     INTRO SECTION
-	     ---------------------------------------- -->
-	<Intro />
-
-	<!-- ----------------------------------------
-	     CARD SLIDER SECTION
-	     ---------------------------------------- -->
-	<CardSlider />
-
-	<!-- ----------------------------------------
-	     FEATURE SECTION 1 - WHITE BACKGROUND
-	     ---------------------------------------- -->
-	<section class="py-6 sm:pt-32 bg-white sm:-mt-72 md:-mt-24 px-4 sm:px-6">
-		<!-- Feature 1: Image on left -->
-		<Feature
-			title="Feature One Title"
-			description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
-			description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
-			buttonText="Explore ionfs.ca"
-			buttonLink="https://ionfs.ca"
-			imageSrc="src/assets/features/feature-1.jpg"
-			imageAlt="Feature 1"
-			imagePosition="left"
-			socialIcons={[
-				{ href: "#", icon: facebookIcon },
-				{ href: "#", icon: instagramIcon },
-				{ href: "#", icon: linkedinIcon },
-			]}
-		/>
-	</section>
-
-	<!-- ----------------------------------------
-	     FEATURE SECTION 2 - DEFAULT BACKGROUND
-	     ---------------------------------------- -->
-	<section>
-		<!-- Feature 2: Image on right -->
-		<Feature
-			title="Feature One Title"
-			description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
-			description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
-			buttonText="Explore ionfs.ca"
-			buttonLink="https://ionfs.ca"
-			imageSrc="src/assets/features/feature-1.jpg"
-			imageAlt="Feature 1"
-			imagePosition="right"
-			socialIcons={[
-				{ href: "#", icon: facebookIcon },
-				{ href: "#", icon: instagramIcon },
-				{ href: "#", icon: linkedinIcon },
-			]}
-		/>
-
-		<!-- ----------------------------------------
 		     CTA SECTION
 		     ---------------------------------------- -->
-		<CTA
-			media="src/assets/features/feature-1.jpg"
-			heading="Connect with us to learn how we can partner with you to provide top tier business supports."
-			button="Let's Chat Today!"
-			link="https://ionfs.ca"
-			alt="Background image showing business professionals collaborating"
-		/>
+	<CTA
+		media="src/assets/features/feature-1.jpg"
+		heading="Connect with us to learn how we can partner with you to provide top tier business supports."
+		button="Let's Chat Today!"
+		link="https://ionfs.ca"
+		alt="Background image showing business professionals collaborating"
+	/>
 
-		<!-- Feature 3: Image on left -->
-		<Feature
-			title="Feature One Title"
-			description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
-			description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
-			buttonText="Explore ionfs.ca"
-			buttonLink="https://ionfs.ca"
-			imageSrc="src/assets/features/feature-1.jpg"
-			imageAlt="Feature 1"
-			imagePosition="left"
-			socialIcons={[
-				{ href: "#", icon: facebookIcon },
-				{ href: "#", icon: instagramIcon },
-				{ href: "#", icon: linkedinIcon },
-			]}
-		/>
-	</section>
+	<!-- Feature 3: Image on left -->
+	<Feature
+		title="Feature One Title"
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+		description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+		buttonText="Explore ionfs.ca"
+		buttonLink="https://ionfs.ca"
+		imageSrc="src/assets/features/feature-1.jpg"
+		imageAlt="Feature 1"
+		imagePosition="left"
+		socialIcons={[
+			{ href: "#", icon: facebookIcon },
+			{ href: "#", icon: instagramIcon },
+			{ href: "#", icon: linkedinIcon },
+		]}
+	/>
+</section>
 
-	<!-- ----------------------------------------
+<!-- ----------------------------------------
 	     FEATURE SECTION 3 - WHITE BACKGROUND
 	     ---------------------------------------- -->
-	<section class="bg-white">
-		<!-- Feature 4: Image on right -->
-		<Feature
-			title="Feature One Title"
-			description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
-			description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
-			buttonText="Explore ionfs.ca"
-			buttonLink="https://ionfs.ca"
-			imageSrc="src/assets/features/feature-1.jpg"
-			imageAlt="Feature 1"
-			imagePosition="right"
-			socialIcons={[
-				{ href: "#", icon: facebookIcon },
-				{ href: "#", icon: instagramIcon },
-				{ href: "#", icon: linkedinIcon },
-			]}
-		/>
-	</section>
+<section class="bg-white">
+	<!-- Feature 4: Image on right -->
+	<Feature
+		title="Feature One Title"
+		description1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+		description2="Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+		buttonText="Explore ionfs.ca"
+		buttonLink="https://ionfs.ca"
+		imageSrc="src/assets/features/feature-1.jpg"
+		imageAlt="Feature 1"
+		imagePosition="right"
+		socialIcons={[
+			{ href: "#", icon: facebookIcon },
+			{ href: "#", icon: instagramIcon },
+			{ href: "#", icon: linkedinIcon },
+		]}
+	/>
+</section>
 
-	<!-- ----------------------------------------
+<!-- ----------------------------------------
 	     TESTIMONIAL SECTION
 	     ---------------------------------------- -->
-	<section>
-		<Testimonial
-			title="Real Stories. Real People."
-			content="We have had the pleasure of working with ION Facility Services Inc. on multiple projects, and their professionalism and expertise have consistently exceeded our expectations. Their team is highly skilled, responsive, and dedicated to…"
-			author="Liliana Salazar"
-		/>
-	</section>
-	<Footer />
-	<!-- Add the ScrollToTop component -->
-	<ScrollToTop />
-</Layout>
+<section>
+	<Testimonial
+		title="Real Stories. Real People."
+		content="We have had the pleasure of working with ION Facility Services Inc. on multiple projects, and their professionalism and expertise have consistently exceeded our expectations. Their team is highly skilled, responsive, and dedicated to…"
+		author="Liliana Salazar"
+	/>
+</section>
+<Footer />
+<!-- Add the ScrollToTop component -->
+<ScrollToTop />
